@@ -19,7 +19,7 @@ const App = () => {
     <Homepage/>
     </Route>
   
-    <Route exact path="/exachanges">
+    <Route exact path="/exchanges">
     <Exachanges/>
     </Route>
 
@@ -39,9 +39,19 @@ const App = () => {
   </Switch>
 </div>
    </Layout>
-  </div>
 
   <div className="footer">
+ <Typography.Title level={5} style={{color: 'white', textAlign: 'center'}}>
+  IGHO <br />
+  All rights reserverd
+ </Typography.Title>
+ <Space> 
+<Link to='/'>Home</Link>
+<Link to='/exchanges'>Exchanges</Link>
+<Link to='/news'>News</Link>
+
+ </Space>
+ </div>
 
   </div>
   
