@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom';
 import millify from 'millify';
 import { Select, Typography, Row, Col } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
-import { useGetCryptosQuery } from '../services/cryptoApi';
-
+import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/cryptoApi';
+import LineChart from './LineChart';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -54,7 +54,7 @@ const CryptoDetails = () => {
     onChange={(value) => setTimeperiod(value)}>
       {time.map((date) => <Option key={date}>{date}</Option>)}
     </Select>
-    {/* line chart */}
+    <LineChart coinHistory={coinHistory} currentPtice={millify(cryptoDetails.price)} coinName={cryptoDetails.name}/>
  
  <Col className="stats-container">
   <Col className="coin-value-statistics">
